@@ -1,0 +1,161 @@
+.cep {
+    margin-left: 5px;
+    border-right: solid 1px #0a0b0f;
+    width: 40%;
+    display: flex;
+    align-items: center;
+}
+
+.cep a {
+    text-decoration: none;
+    color: #6d6c6d;
+    font-size: 25px;
+}
+
+.cep span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0a0b0f;
+    z-index: 1000;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fffafa;
+    padding: 20px;
+    border-radius: 7px;
+    box-shadow: 0 0 10px #0a0b0f;
+    height: 45%;
+    width: 50%;
+}
+
+.indica-cep {
+    font-size: 27px;
+    text-align: center;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    font-weight: 900;
+}
+
+.modal input {
+    width: 98%;
+    height: 50px;
+    outline: none;
+    padding-left: 10px;
+    font-size: 18px;
+}
+
+.modal input::placeholder {
+    font-size: 13px;
+}
+
+.consultar {
+    margin-top: 18px;
+    width: 100%;
+    height: 55px;
+    font-weight: 800;
+    font-size: 20px;
+    border: none;
+    border-radius: 3px;
+    background: #979499;
+    cursor: pointer;
+}
+
+.consultar:hover {
+    background-color: #7d73bd;
+    color: #fffafa;
+    border: none;
+}
+
+#result {
+    background-color: #fffafa;
+    border-radius: 0 0 7px 7px;
+    padding: 10px;
+}
+
+#result p {
+    font-size: 25px;
+    margin: 0;
+    padding: 5px 10px;
+}
+
+#result span {
+    font-size: 25px;
+    padding-top: 5px;
+    font-weight: bold;
+    color: #7d73bd;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+@media(max-width: 600px) {
+    .cep {
+        width: 75%;
+    }
+    .cep a {
+        font-size: 14px;
+    }
+    .cep span {
+        font-size: 12px;
+    }
+
+    .close-button {
+        font-size: 18px;
+    }
+    .indica-cep {
+        font-size: 15px;
+        margin-top: 0;
+    }
+    .modal {
+        width: 65%;
+        height: 20%;
+    }
+    .modal input {
+        height: 20px;
+        font-size: 12px;
+        padding-left: 4px;
+    }
+    .consultar {
+        height: 28px;
+        font-size: 10px;
+        font-weight: 800;
+    }
+    #result p {
+        font-size: 16px;
+    }
+    #result span {
+        font-size: 18px;
+    }
+}

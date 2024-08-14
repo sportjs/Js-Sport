@@ -1,0 +1,194 @@
+.cabecalho {
+    background-color: #b9b6bd;
+}
+
+.cabecalho.show {
+    transform: translateY(0);
+}
+
+.informacao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #7d73bd;
+}
+
+.informacao span {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.informacao p, .informacao a {
+    font-size: 16px;
+    text-decoration: none;
+    color: #0a0b0f;
+    margin: 3px 14px;
+    font-weight: bold;
+}
+
+.buscar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 95%;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.logo-img {
+    margin-top: 2px;
+    width: 150px;
+    padding: 2px 0
+}
+
+.pesquisar {
+    position: relative;
+    width: 100%;
+}
+
+.pesquisar input {
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.pesquisar button {
+    margin-top: -0.5px;
+    position: absolute;
+    right: 0;
+    top: 51%;
+    transform: translateY(-50%);
+    width: 100px;
+    cursor: pointer;
+    height: 100%;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.pesquisar button:hover {
+    background-color: #7d73bd;
+    color: #fffafa;
+
+}
+
+.menu {
+    display: flex;
+    justify-content: space-between;
+    height: 50px;
+    position: relative;
+    z-index: 10;
+    background-color: #fffafa;
+}
+
+.nav-bar {
+    width: 100%;
+    height: 30px;
+}
+
+.nav-bar ul {
+    display: flex;
+    list-style-type: none;
+    position: relative;
+    top: -5px;
+    gap: 2.5rem;
+}
+
+.nav-bar a {
+    text-decoration: none;
+    color: #0a0b0f;
+    font-weight: 800;
+    font-size: 18px;
+    padding: 6px 8px;
+}
+
+.nav-bar a:hover {
+    background-color: #7d73bd;
+    border-radius: 5px;
+    color: #fffafa;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    position: absolute;
+    cursor: pointer;
+    right: 0;
+    color: #0a0b0f;
+    margin-top: 1px;
+}
+
+@media (max-width: 600px) {
+    .informacao span {
+        font-size: 12px;
+    }
+    .informacao p, .informacao a {
+        font-size: 14px;
+        font-weight: normal;
+        margin: 3px 7px;
+    }
+    .buscar {
+        gap: 0.8rem;
+    }
+    .logo-img {
+        width: 80px;
+    }
+    .pesquisar input {
+        height: 32px;
+    }
+    .pesquisar input[type="text"] {
+        font-size: 14px;
+    }
+    .pesquisar input::placeholder {
+        font-size: 12px;
+    }
+    .pesquisar button {
+        width: 65px;
+        top: 52%;
+        font-weight: 600;
+        font-size: 13px;
+    }
+    .menu {
+        height: 28px;
+    }
+    .menu-icon {
+        display: block;
+        position: absolute;
+        margin-right: 5px;
+        top: -2.5px;
+        font-size: 30px;
+    }
+    .nav-bar ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        right: 8px;
+        top: 12px;
+        background-color: #b9b9b9;
+        border-radius: 0 0 5px 5px;
+        gap: 0.5rem;
+    }
+    .nav-bar ul.show {
+        display: flex;
+        padding: 10px;
+    }
+    .nav-bar ul li {
+        margin: 0;
+    }
+    .nav-bar ul li a {
+        font-size: 18px;
+        padding: 5px;
+        display: block;
+    }
+    .nav-bar a:hover {
+        background-color: #7d73bd;
+        border-radius: 3px;
+    }
+}

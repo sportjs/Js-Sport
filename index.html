@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Permissions-Policy" content="geolocation=(self), microphone=(), camera=()">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="img/favicon.ico"/>
+    <link rel="stylesheet" href="css/style.css">
+    <title>JS SPORT</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <div class="informacao">
+            <p><span>JS SPORT</span> modas esportivas, aguardem!</p>
+            <a href="#"><i class="bi bi-universal-access"></i>Acessibilidade</a>
+        </div>
+
+        <div class="buscar">
+            <a href="#inicio"><img class="logo-img" src="img/logo.jpg" alt="Logo"></a>
+            <div class="pesquisar">
+                <input type="text" id="searchInput" placeholder="O que voçê esta procurando?">
+                <button id="searchButton">Buscar</button>
+            </div>
+            <i class="carrinho bi bi-cart" id="carrinho"></i>
+            <span id="cart-count">0</span>
+        </div>
+
+        <div class="menu">
+            <div class="cep">
+                <a href="#" id="insertCep"><i class="bi bi-geo-alt-fill"></i><span>Insira o CEP</span></a>
+            </div>
+
+            <i class="menu-icon bi bi-list" id="menuIcon"></i>
+            <nav class="nav-bar" id="navBar">
+                <ul>
+                    <li><a href="nike/nike.html">Nike</a></li>
+                    <li><a href="adidas/adidas.html">Adidas</a></li>
+                    <li><a href="pumaMizuno/pumaMizuno.html">Puma e Mizuno</a></li>
+                    <li><a href="society/society.html">Society</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+
+            <div class="overlay" id="overlay">
+                <div class="modal">
+                    <button class="close-button" id="closeButton">&times;</button>
+                    <p class="indica-cep">Quer saber se fazemos entregas na sua cidade? É só colocar o seu CEP:</p>
+                    <input type="text" id="pesquisarCEP" placeholder="Insira o CEP">
+                    <button class="consultar" id="consultarButton">CONSULTAR</button>
+                    <div id="result"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div id="cart-overlay" class="cart-overlay">
+        <div class="product-cart">
+            <button id="close-cart" class="close-cart-btn">&times;</button>
+        </div>
+    </div>
+
+    <div class="carousel">
+        <div class="inner">
+            <div class="item">
+                <img src="img/capa1.png" alt="Image 1">
+                <div class="texto-carousel">
+                    <h2 class="min-title">Chuteira nike mercurial</h2>
+                    <h5 class="infor">Buscando o melhor e mais proporções para você.</h5>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/capa2.png" alt="Image 2">
+                <div class="texto-carousel">
+                    <h2 class="min-title">Chuteira adidas predator</h2>
+                    <h5 class="infor">Sempre buscando o melhor conforto para os atletas.</h5>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/capa3.webp" alt="Image 3">
+                <div class="texto-carousel">
+                    <h2 class="min-title">Chuteira puma ultimate</h2>
+                    <h5 class="infor">Vem conquistando mais e mais os apaijonados por sports.</h5>
+                </div>
+            </div>
+            <div class="item">
+                <img src="img/capa4.webp" alt="Image 4">
+                <div class="texto-carousel">
+                    <h2 class="min-title">Chuteira mizuno morela</h2>
+                    <h5 class="infor">A melhor em questão de durabilidade para voçê.</h5>
+                </div>
+            </div>
+        </div>
+        <div class="carousel-indicators">
+            <button class="active"></button>
+            <button></button>
+            <button></button>
+            <button></button>
+        </div>
+    </div>
+
+    <section>
+        <h1 class="minetitulo">Aproveitem a oportunidade e adiquira a sua!</h1>
+        
+        <div class="container" id="resultsContainer"></div>
+        <button class="but-voltar" id="backButton">Voltar</button>
+
+        <div class="produto" id="produtosContainer">
+            <div class="destaque">
+                <img src="img/nike27.jpeg" alt="Chuteira Nike">
+                <h3>Nike Phantom</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 340,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/nike27.jpeg" data-name="Nike Phantom" data-price="R$ 340,00"></i>
+                <a href="#" class="ver-fotos" data-produto="nike">Ver Fotos</a>
+            </div>
+
+            <div class="destaque">
+                <img src="img/adida1.jpeg" alt="Chuteira Adidas">
+                <h3>Adidas Pure FG</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 350,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/adida1.jpeg" data-name="Adidas Pure FG" data-price="R$ 350,00"></i>
+                <a href="#" class="ver-fotos" data-produto="adidas">Ver Fotos</a>
+            </div>
+    
+            <div class="destaque">
+                <img src="img/puma1.jpeg" alt="Chuteira Puma">
+                <h3>Puma Future</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 340,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/puma1.jpeg" data-name="Puma Future" data-price="R$ 340,00"></i>
+                <a href="#" class="ver-fotos" data-produto="puma">Ver Fotos</a>
+            </div>
+    
+            <div class="destaque">
+                <img src="img/adida7.jpeg" alt="Chuteira Adidas">
+                <h3>Adidas X Speed...</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 330,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/adida7.jpeg" data-name="Adidas X Speed FX" data-price="R$ 330,00"></i>
+                <a href="#" class="ver-fotos" data-produto="adidas1">Ver Fotos</a>
+            </div>
+        </div>
+    
+        <div class="produto" id="produtosContainer">
+            <div class="destaque">
+                <img src="img/mizuno1.jpeg" alt="Chuteira Mizuno">
+                <h3>Mizuno Morela</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 330,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/mizuno1.jpeg" data-name="Mizuno Morela" data-price="R$ 330,00"></i>
+                <a href="#" class="ver-fotos" data-produto="mizuno">Ver Fotos</a>
+            </div>
+    
+            <div class="destaque">
+                <img src="img/puma5.jpeg" alt="Chuteira Puma">
+                <h3>Puma Fut Ultim...</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 350,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/puma5.jpeg" data-name="Puma Fut Ultimete" data-price="R$ 350,00"></i>
+                <a href="#" class="ver-fotos" data-produto="puma1">Ver Fotos</a>
+            </div>
+    
+            <div class="destaque">
+                <img src="img/nike21.jpeg" alt="Chuteira Nike">
+                <h3>Nike Vapor</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 340,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/nike21.jpeg" data-name="Nike Vapor" data-price="R$ 340,00"></i>
+                <a href="#" class="ver-fotos" data-produto="nike1">Ver Fotos</a>
+            </div>
+    
+            <div class="destaque">
+                <img src="img/adida14.jpeg" alt="Chuteira Adidas">
+                <h3>Adidas Predator</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 330,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/adida14.jpeg" data-name="Adidas Pradator" data-price="R$ 330,00"></i>
+                <a href="#" class="ver-fotos" data-produto="adidas2">Ver Fotos</a>
+            </div>
+        </div>
+    
+        <div class="produto" id="produtosContainer">
+            <div class="destaque">
+                <img src="img/nike11.jpeg" alt="Chuteira Nike">
+                <h3>Nike Phontom GT</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 350,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/nike11.jpeg" data-name="Nike Phontom GT" data-price="R$ 350,00"></i>
+                <a href="#" class="ver-fotos" data-produto="nike2">Ver Fotos</a>
+            </div>
+    
+            <div class="destaque">
+                <img src="img/adida18.jpeg" alt="Chuteira Adidas">
+                <h3>Adidas Speed FIT</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 340,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/adida18.jpeg" data-name="Adidas Speed FIT" data-price="R$ 340,00"></i>
+                <a href="#" class="ver-fotos" data-produto="adidas3">Ver Fotos</a>
+            </div>
+    
+            <div class="destaque">
+                <img src="img/puma10.jpeg" alt="Chuteira Puma">
+                <h3>Puma Future Z...</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 340,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/puma10.jpeg" data-name="Puma Future Z..." data-price="R$ 340,00"></i>
+                <a href="#" class="ver-fotos" data-produto="puma2">Ver Fotos</a>
+            </div>
+    
+            <div class="destaque">
+                <img src="img/puma16.jpeg" alt="Chuteira Puma">
+                <h3>Puma Ultra</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 340,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/puma16.jpeg" data-name="Puma Ultra" data-price="R$ 340,00"></i>
+                <a href="#" class="ver-fotos" data-produto="puma3">Ver Fotos</a>
+            </div>
+        </div>
+    
+        <div class="produto" id="produtosContainer">
+            <div class="destaque">
+                <img src="img/adida21.jpeg" alt="Chuteira Adidas">
+                <h3>Adidas adi Kroos</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 350,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/adida21.jpeg" data-name="Adidas adi Kroos" data-price="R$ 350,00"></i>
+                <a href="#" class="ver-fotos" data-produto="adidas4">Ver Fotos</a>
+            </div>
+    
+            <div class="destaque">
+                <img src="img/nike17.jpeg" alt="Chuteira Nike">
+                <h3>Nike Mercurial</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 340,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/nike17.jpeg" data-name="Nike Mercurial" data-price="R$ 340,00"></i>
+                <a href="#" class="ver-fotos" data-produto="nike3">Ver Fotos</a>
+            </div>
+    
+            <div class="destaque">
+                <img src="img/nike8.jpeg" alt="Chuteira Nike">
+                <h3>Nike Mercurial...</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 340,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/nike8.jpeg" data-name="Nike Mercurial..." data-price="R$ 340,00"></i>
+                <a href="#" class="ver-fotos" data-produto="nike4">Ver Fotos</a>
+            </div>
+    
+            <div class="destaque">
+                <img src="img/nike20a.jpeg" alt="Chuteira Nike">
+                <h3>Nike Mercu Va...</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 340,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/nike20a.jpeg" data-name="Nike Mercu Va..." data-price="R$ 340,00"></i>
+                <a href="#" class="ver-fotos" data-produto="nike5">Ver Fotos</a>
+            </div>
+        </div>
+    
+        <div class="produto" id="produtosContainer">
+            <div class="destaque">
+                <img src="img/adida30.jpeg" alt="Chuteira Adidas">
+                <h3>Adidas Predator</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 350,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/adida30.jpeg" data-name="Adidas Predator" data-price="R$ 350,00"></i>
+                <a href="#" class="ver-fotos" data-produto="adidas5">Ver Fotos</a>
+            </div>
+    
+            <div class="destaque">
+                <img src="img/adida28.jpeg" alt="Chuteira Adidas">
+                <h3>Adidas  Crazyfast</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 350,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/adida28.jpeg" data-name="Adidas  Crazyfast" data-price="R$ 350,00"></i>
+                <a href="#" class="ver-fotos" data-produto="adidas6">Ver Fotos</a>
+            </div>
+    
+            <div class="destaque">
+                <img src="img/mizuno9.jpeg" alt="Chuteira Mizuno">
+                <h3>Mizuno Morelia</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 340,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/mizuno9.jpeg" data-name="Mizuno Morelia" data-price="R$ 340,00"></i>
+                <a href="#" class="ver-fotos" data-produto="mizuno1">Ver Fotos</a>
+            </div>
+    
+            <div class="destaque">
+                <img src="img/nike1.jpeg" alt="Chuteira Nike">
+                <h3>Nike AIR Zoom</h3>
+                <i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-fill"></i><i class="estrela bi bi-star-half"></i>
+                <p><span>R$ 350,00</span> à vista<br>ou até 3x sem juros.</p>
+                <i class="amei bi bi-heart-fill" data-image="img/nike1.jpeg" data-name="Nike AIR Zoom" data-price="R$ 350,00"></i>
+                <a href="#" class="ver-fotos" data-produto="nike6">Ver Fotos</a>
+            </div>
+        </div>
+        
+        <div id="foto-modal" class="modalfotos">
+            <div class="modalfoto-content">
+                <button class="prev" id="prev">&laquo;</button>
+                <img id="foto-grande" src="img/adidas2.jpeg" alt="Foto Grande">
+                <button class="next" id="next">&raquo;</button>
+                <span class="close">&times;</span>
+                <a href="#" class="link-pedido" id="link-pedido" target="_blank">
+                    <button class="button-pedido" id="button-pedido">Fazer Pedido</button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>       
+        <hr>
+        <div class="descricao">
+            <p>
+                &copy; 2023 <span>JS SPORT</span>.
+                Todos os direitos reservados! <span>Chorozinho-Ce</span>. Fazemos entregas
+                no centro das cidades vizinhas, <span>Pacajus, Cascavel, Barreira</span> e <span>Horizonte.</span>
+            </p>
+        </div>
+        <hr>
+
+        <div class="cojunto">
+            <div class="pagamento">
+                <h3>Forma de pagamentos</h3>
+                <div class="for-pagamento">
+                    <img src="img/visa.png" alt="Forma de pagamentos">
+                    <img src="img/master card.png" alt="Forma de pagamentos">
+                    <img src="img/pix.png" alt="Forma de pagamentos">
+                </div>
+            </div>
+
+            <div class="redesocial" id="contato">
+                <h3>Rede sociais</h3>
+                <div class="redesocial-link">
+                    <a href="https://www.facebook.com/profile.php?id=61551025103232&sk=about" target="_blank"><img src="img/facebook1.png" alt="Facebook"></a>
+                    <a href="https://www.instagram.com/jschuteiras2023/" target="_blank"><img src="img/instagram1.png" alt="Instagran"></a>
+                    <a href="Erro 404, essa pagina não existe!" target="_blank"><img src="img/linkedin.png" alt="Linkedin"></a>
+                    <a href="Erro 404, essa pagina não existe!" target="_blank"><img src="img/X-twitter.png" alt="X(Twitter)"></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-infor">
+            <p>Se você é de outra cidade, entre em contato no direct, que comverçamos sobre sua entrega.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/script.js"></script>
+</body>
+</html>
